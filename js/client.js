@@ -15,9 +15,8 @@ $("#loginform").submit(function(e) {
         dataType: "JSON",
         data: data, // serializes the form's elements.
         error: function(response) {
-            $(".info").text("Unfortunately the server is not responding").fadeTo(1000, 1).fadeTo(2000, 0);
-           //for test purposes
-            window.location.href = 'game.html';
+           alert("Something went wrong")
+
         },
         success: function(response)
         {
@@ -27,9 +26,7 @@ $("#loginform").submit(function(e) {
 
                             }
             else {
-                $(".info").text("Wrong username or password. Please try again.").fadeTo(1000, 1).fadeTo(2000, 0);
-
-                //document.location = '/login.php?info=Wrong username or password. Please try again.';
+               alert("Wrong username or password, please try again.")
             }
         }
     });
