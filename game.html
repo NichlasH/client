@@ -1,22 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Test</title>
+    <title>Snake</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/gameoverride.css" type="text/css">
 
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/gameoverride.css">
+    <script src="js/lib/jquery-2.1.4.min.js"></script>
+    <script src="js/lib/jquery-ui.min.js"></script>
+    <script src="js/lib/raphael-min.js"></script>
+    <script>
+
+        $(function() {
+            $("#container").fadeTo("slow",1);
+        });
+
+
+        $.get("http://localhost:9998/api/user/", function( data )  {
+            //$( ".result" ).html( data );
+            for (var i=0;i<data.length;++i)
+            {
+                $('#frmOpponent')
+                        .append($('<option>', { value : data[i].id })
+                                .text(data[i].firstName + " " + data[i].lastName + " (" + data[i].userName + ")"));
+            }
+
+        });
+
+
+    </script>
 </head>
 <body>
-<div class="container">
+<div class="background"></div>
+<div id="overlay">
+
+    <div id="result"></div>
+
+    <div id="notification"></div>
+    <div id="container">
+
+        <div id="arena">
+            <canvas id="grid" width="480" height="480"></canvas><br />
+        </div>
+
+        <div id="form">
+            <form id="idForm" method="post">
+                <label>Name</label>
+                <input type="text" name="frmGameName" id="frmGameName">
+                <label>Opponent</label>
+                <select name="frmOpponent" id="frmOpponent">
+                    <optgroup label="Select Opponent">
 
 
+                    </optgroup>
+                </select>
+                <input type="hidden" name="frmHost" id="frmHost" value="3">
+                <input type="hidden" name="frmHostControls" id="frmHostControls">
+                <input type="submit" value="Start Game">
+            </form>
+
+        </div><!--#form-->
 
 
+        <div id="movements">
+            Movements <span></span><br />
+            <div class="arrows"></div>
+        </div><!--#movements-->
 
-<script src="js/lib/jquery-2.1.4.min.js"></script>
-<script src="js/lib/bootstrap.js"></script>
-<script src="js/client.js"></script>
+    </div><!--#container-->
 
+</div><!--#OVERLAY-->
+
+<div class="sk-folding-cube">
+    <div class="sk-cube1 sk-cube"></div>
+    <div class="sk-cube2 sk-cube"></div>
+    <div class="sk-cube4 sk-cube"></div>
+    <div class="sk-cube3 sk-cube"></div>
+</div>
+
+<script src="js/lib/snake.js"></script>
+<script>
+    function ConvertFormToJSON(form){
+        var array = jQuery("form").serializeArray();
+        var json = {};
+
+        jQuery.each(array, function() {
+            json[this.name] = this.value || '';
+        });
+        console.log(json);
+        return json;
+    }
+
+    // this is the id of the form
+    $("#idForm").submit(function(e) {
+
+        var GameName = $('#frmGameName').val();
+        var Opponent = $('#frmOpponent').val();
+        var Host = $('#frmHost').val();
+        var HostControls = host_movements;
+
+
+        var url = "http://localhost:9998/api/game/"; // the script where you handle the form input.
+        var data = '{"gameName": "' + GameName + '", "opponent": '+ Opponent +', "host": '+ Host +', "hostControls": "' + HostControls + '"}';
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            dataType: "JSON",
+            data: data, // serializes the form's elements.
+            success: function(response)
+            {
+                console.log(response.message); // show response
+                $("#overlay").fadeTo("slow",0);
+                $(".sk-folding-cube").delay(100).fadeTo(1600, 1);
+                setTimeout(function(){ document.location = '/';}, 4000 );
+            }
+        });
+
+        e.preventDefault(); // avoid to execute the actual submit of the form.
+    });
+
+</script>
 </body>
 </html>
