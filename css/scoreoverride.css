@@ -1,10 +1,13 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: black;
 
-
-body {
-    font-family: 'Proxima Nova Light', Arial, sans-serif;
-    font-size:10pt;
-
+    color: black;
+    font-family: "Avant Garde";
+    font-size: 22px;
 }
+
 .background {
     position: fixed;
     margin:0;
@@ -29,111 +32,9 @@ body {
     background-blend-mode: screen;
     z-index: 0;}
 
-#overlay {
-    display:block;
-    height:100%;
-    width:100%;
-    position:fixed;
-    z-index:10;
-}
-
-#container {
-    opacity:0;
-    position:absolute;
-    width:1000px;
-    left:50%;
-    top:62%;
-    height:520px;
-    margin-top:-322px;
-    margin-left:-500px;
-    background-color:aliceblue;
-    padding:20px;
-    -webkit-box-shadow: 0px 0px 42px -6px aliceblue;
-    -moz-box-shadow: 0px 0px 42px -6px aliceblue;
-    box-shadow: 0px 0px 42px -6px aliceblue);
-    z-index:1;
-}
-
-#arena {float:right;}
-
-#grid {
-    border-right:1px solid #E0E0E0;
-    border-bottom:1px solid #E0E0E0;
-}
-
-#form {float:left;}
-#form form {}
-#form form label {
-    display:block;
-    width:374px;
-    padding:8px 0 6px 0;
-}
-
-form input {
-    font-family: 'Proxima Nova Light', Arial, sans-serif;
-    padding:7px 10px;
-    border: 1px black;
-    font-size:16pt;
-    margin:5px 0 10px 0;
-    width:360px;
-    border-radius: 6px;
-}
-
-form select {
-    -webkit-appearance: menulist-button;
-    font-size: 14px;width:382px; height:40px;
-    margin:5px 0 10px 0;
-    font-family: 'Proxima Nova Light', Arial, sans-serif;
-}
-
-form input[type="submit"] {
-    width:380px;
-    position: absolute;
-    padding: 10px 40px;
-    margin: 242px 50px 0 0;
-    border-radius: 6px;
-    font-family: 'Proxima Nova Light', Arial, sans-serif;
-    font-size: 25px;
-    color: aliceblue;
-    background-color: palegreen;
-}
-
-#movements {
-    float:left;
-    width:384px;
-    margin:20px 0 0 0;
-    }
-
-#notification {
-    position:absolute;
-    text-align:center;
-    top:20px;
-    left:50%;
-    margin-left:-500px;
-    width:1000px;
-    font-size:16pt;
-}
-
-.arrows {margin:0 0 0 4px;}
-.arrowUp, .arrowRight, .arrowDown, .arrowLeft {
-    float:left;
-    width:7px;
-    height:7px;
-    border-right-width: 5px;
-    border-bottom-width: 5px;
-    border-style: solid;
-    margin:12px 8px 0 0;
-
-}
-
-.arrowUp {border-color: #FFBF00;transform: rotate(-135deg);}
-.arrowRight {border-color: #E83F6F;transform: rotate(-45deg);}
-.arrowDown {border-color: #2274A5;transform: rotate(45deg);}
-.arrowLeft {border-color: #32936F;transform: rotate(135deg);}
-
 
 /* Nav bar */
-@import url(http://fonts.googleapis.com/css?family=Raleway);
+
 #cssmenu,
 #cssmenu ul,
 #cssmenu ul li,
@@ -160,7 +61,7 @@ form input[type="submit"] {
 }
 #cssmenu {
     width: auto;
-    border-bottom: 3px solid #98fb98;
+    border-bottom: 5px solid #98fb98;
     font-family: Raleway, sans-serif;
     line-height: 1;}
 #cssmenu ul {
@@ -185,6 +86,7 @@ form input[type="submit"] {
 }
 #cssmenu.align-right > ul > li {
     float: right;
+    text-align: right;
 }
 #cssmenu.align-right > ul > li > a {
     margin-right: 0;
@@ -235,7 +137,7 @@ form input[type="submit"] {
 #cssmenu > ul > li > a:hover:after {
 
 
-background: #98fb98;
+    background: #98fb98;
 
 
 }

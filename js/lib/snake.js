@@ -50,7 +50,7 @@ function drawLeft() {
     // Looking up the color of the future tile. If taken, error out.
     var currentLeft = ctx.getImageData(cx - tile_size, cy, tile_size, tile_size).data;
     var hexCurrentLeft = "#" + ("000000" + rgbToHex(currentLeft[0], currentLeft[1], currentLeft[2])).slice(-6);
-    if (hexCurrentLeft == "#3498db") {
+    if (hexCurrentLeft == "#98fb98") {
         return false;
     }
     ctx.fillRect(cx - tile_size, cy, tile_size, tile_size);
@@ -69,7 +69,7 @@ function drawLeft() {
     var tileLeft = ctx.getImageData(cx - tile_size, cy, tile_size, tile_size).data;
     var hexTileLeft = "#" + ("000000" + rgbToHex(tileLeft[0], tileLeft[1], tileLeft[2])).slice(-6);
 
-    if (hexTileUp == "#3498db" && hexTileDown == "#3498db" && hexTileLeft == "#3498db") {
+    if (hexTileUp == "#98fb98" && hexTileDown == "#98fb98" && hexTileLeft == "#98fb98") {
         alert("YOU BE DEAD");
     }
 }
@@ -85,7 +85,7 @@ function drawUp() {
     // Looking up the color of the future tile. If red, error out.
     var p = ctx.getImageData(cx, cy - tile_size, tile_size, tile_size).data;
     var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
-    if (hex == "#3498db") {
+    if (hex == "#98fb98") {
         return false;
     };
     ctx.fillRect(cx, cy - tile_size, tile_size, tile_size);
@@ -107,7 +107,7 @@ function drawRight() {
     // Looking up the color of the future tile. If red, error out.
     var p = ctx.getImageData(cx + tile_size, cy, tile_size, tile_size).data;
     var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
-    if (hex == "#3498db") {
+    if (hex == "#98fb98") {
         return false;
     };
     ctx.fillRect(cx + tile_size, cy, tile_size, tile_size);
@@ -126,7 +126,7 @@ function drawDown() {
         return false;};
     var p = ctx.getImageData(cx, cy + tile_size, tile_size, tile_size).data;
     var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
-    if (hex == "#3498db") {
+    if (hex == "#98fb98") {
 
         return false;
     };
