@@ -19,21 +19,13 @@
             <li class='active'><a href='delete.html'><span class="glyphicon glyphicon-trash"></span></a></li>
         </ul>
     </div>
-    <div class="row">
-    <div class="col-lg-6">
-        <div class="input-group">
-            <input type="text" class="form-control" aria-label="...">
-            <div class="input-group-btn">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Delete<span class="caret"></span></button>
-                <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="#">Game</a></li>
-                    <li><a href="#">Current User</a></li>
-                </ul>
-            </div><!-- /btn-group -->
-        </div><!-- /input-group -->
-    </div><!-- /.col-lg-6 -->
-</div><!-- /.row -->
+    <div class="delete">
 
+        <form id="deleteform" method="delete" >
+            <input type="text" id="gamefrm" placeholder="Enter GameID to delete..." name="game"><br>
+            <input class= "deletebutton" type="submit" value="Delete">
+        </form>
+    </div>
     </div>
 </body>
 <script src="js/lib/jquery-2.1.4.min.js"></script>

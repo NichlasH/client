@@ -1,10 +1,41 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: black;
 
-
-body {
-    font-family: 'Proxima Nova Light', Arial, sans-serif;
-    font-size:10pt;
-
+    color: black;
+    font-family: "Avant Garde";
+    font-size: 10px;
 }
+
+body ::-webkit-input-placeholder {
+/ WebKit browsers /
+font-family: 'Source Sans Pro', sans-serif;
+    color: #f0f8ff;
+    font-weight: 300;
+}
+body :-moz-placeholder {
+/ Mozilla Firefox 4 to 18 /
+font-family: 'Source Sans Pro', sans-serif;
+    color: #f0f8ff;
+    opacity: 1;
+    font-weight: 300;
+}
+body ::-moz-placeholder {
+/ Mozilla Firefox 19+ /
+font-family: 'Source Sans Pro', sans-serif;
+    color: #f0f8ff;
+    opacity: 1;
+    font-weight: 300;
+}
+body :-ms-input-placeholder {
+/ Internet Explorer 10+ /
+font-family: 'Source Sans Pro', sans-serif;
+    color: #f0f8ff;
+    font-weight: 300;}
+
+
+
 .background {
     position: fixed;
     margin:0;
@@ -36,6 +67,69 @@ body {
     position:fixed;
     z-index:10;
 }
+.delete{
+    position: absolute;
+    top: calc(50% - 75px);
+    left: calc(50% - 50px);
+    height: 150px;
+    width: 350px;
+    padding: 1px;
+    z-index: 2;
+}
+
+.delete input[type=text]{
+    width: 250px;
+    height: 30px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 10px;
+    color: #fff;
+    font-family: 'Exo', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 4px;
+}
+
+
+.delete input[type=submit]{
+    width: 250px;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    color: #a18d6c;
+    font-family: 'Exo', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 6px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.delete input[type=submit]:hover{
+    opacity: 0.8;
+}
+
+.delete input[type=submit]:active{
+    opacity: 0.6;
+}
+
+.delete input[type=text]:focus{
+    outline: none;
+    border: 1px solid rgba(255,255,255,0.9);
+}
+
+.delete input[type=password]:focus{
+    outline: none;
+    border: 1px solid rgba(255,255,255,0.9);
+}
+
+
+::-webkit-input-placeholder{
+    color: rgba(255,255,255,0.6);
+}
+
 
 /* Nav bar */
 @import url(http://fonts.googleapis.com/css?family=Raleway);

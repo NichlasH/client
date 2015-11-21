@@ -29,6 +29,7 @@ body {
     background-blend-mode: screen;
     z-index: 0;}
 
+
 #overlay {
     display:block;
     height:100%;
@@ -42,7 +43,7 @@ body {
     position:absolute;
     width:1000px;
     left:50%;
-    top:62%;
+    top:50%;
     height:520px;
     margin-top:-322px;
     margin-left:-500px;

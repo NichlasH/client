@@ -39,6 +39,36 @@ $("#loginform").submit(function(e) {
     e.preventDefault(); // avoid to execute the actual submit of the form.
 });
 
+$("#deleteform").submit(function(e) {
+
+    var game = $('#gamefrm').val();
+    var url = "http://localhost:9998/api/games/" + game; // the script where you handle the form input.
+    console.log(url);
+    $.ajax({
+        type: 'POST',
+        url: url,
+        dataType: "JSON",
+        error: function(response) {
+            alert("Something went wrong")
+        },
+        success: function(response)
+        {
+            console.log(response.message); // show response
+            if(response.message === "Game was deleted") {
+                alert("Game deleted")
+
+            }
+            else {
+                alert("Can't find that game.")
+            }
+        }
+    });
+
+
+
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+});
+
 
 
 

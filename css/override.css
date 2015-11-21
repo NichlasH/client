@@ -8,6 +8,32 @@ body{
     font-size: 12px;
 }
 
+body ::-webkit-input-placeholder {
+/ WebKit browsers /
+font-family: 'Source Sans Pro', sans-serif;
+    color: #f0f8ff;
+    font-weight: 300;
+}
+body :-moz-placeholder {
+/ Mozilla Firefox 4 to 18 /
+font-family: 'Source Sans Pro', sans-serif;
+    color: #f0f8ff;
+    opacity: 1;
+    font-weight: 300;
+}
+body ::-moz-placeholder {
+/ Mozilla Firefox 19+ /
+font-family: 'Source Sans Pro', sans-serif;
+    color: #f0f8ff;
+    opacity: 1;
+    font-weight: 300;
+}
+body :-ms-input-placeholder {
+/ Internet Explorer 10+ /
+font-family: 'Source Sans Pro', sans-serif;
+    color: #f0f8ff;
+    font-weight: 300;}
+
 .background {
     position: fixed;
     margin:0;
