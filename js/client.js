@@ -1,4 +1,5 @@
-console.log("TEST");
+
+
 
 $("#loginform").submit(function(e) {
 
@@ -25,7 +26,11 @@ $("#loginform").submit(function(e) {
         {
             console.log(response.message); // show response
             if(response.userid) {
+                userid = response.userid;
+                document.cookie= userid;
+
                 window.location.href = 'game.html';
+
 
                             }
             else {
@@ -50,6 +55,7 @@ $("#deleteform").submit(function(e) {
         dataType: "JSON",
         error: function(response) {
             alert("Something went wrong")
+
         },
         success: function(response)
         {
@@ -73,72 +79,105 @@ $("#deleteform").submit(function(e) {
 
 
 
+    $.get("http://localhost:9998/api/scores",   function( data )  {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$(document).ready(function () {
-
-
-    var url = "http://localhost:9998/api/scores/"; // the script where you handle the form input.
-    var display = {};
-
-    $.ajax({
-        url: url,
-        type: 'GET',
-        dataType: "JSONP",
-        success: function () {
-            console.log()
-        },
-        error: function (e) {
-            //called when there is an error
-            //console.log(e.message);
-        }
-    });
-});
-
-
-
-    $.get("http://localhost:9998/api/scores", function( data )  {
-        //$( ".result" ).html( data );
-        for (var i=0;i<data.length;++i)
+        for (var i=0;i<data.length && i < 10 ;++i)
         {
-            $('#pending tr:last').after('<tr>' +
+            $('#score tr:last').after('<tr>' +
                 '<td>' + (i+1) + '</td>' +
                 '<td>' + data[i].user.firstName +" "+ data[i].user.lastName + '</td>' +
                 '<td>' + data[i].score + '</td>' +
 
                 '</tr>');
         }
-console.log(data)
-
     });
+
+
+var userid = document.cookie;
+
+$.get("http://localhost:9998/api/games/host/"+ userid + "/", function( data )  {
+    for (var i=0;i<data.length;++i)
+    {
+        $('#gametable tr:last').after('<tr>' +
+            '<td>' + data[i].name + '</td>' +
+            '<td>' + data[i].gameId + '</td>' +
+
+            '</tr>');
+    }
+    console.log(data)
+
+});
+
+$( document ).ready(function()
+{
+    $("#gamecontainer").fadeTo("slow",1);
+
+
+});
+$.get("http://localhost:9998/api/users/", function( data )  {
+console.log(data)
+    for (var i=0;i<data.length;++i)
+    {
+        $('#frmOpponent')
+            .append($('<option>', { value : data[i].id })
+                .text(data[i].firstName + " " + data[i].lastName + " (" + data[i].username + ")"));
+    }
+});
+
+
+
+function ConvertFormToJSON(form){
+    var array = jQuery("form").serializeArray();
+    var json = {};
+
+    jQuery.each(array, function() {
+        json[this.name] = this.value || '';
+    });
+    console.log(json);
+    return json;
+}
+
+// this is the id of the form
+$("#Start").click(function(e) {
+
+    var GameName = $('#frmGameName').val();
+    var Opponent = $('#frmOpponent').val();
+    var Host = document.cookie;
+    var HostControls = host_movements;
+
+
+    var url = "http://localhost:9998/api/games/"; // the script where you handle the form input.
+    var game = {
+        name: GameName,
+        opponent: Opponent,
+        host: Host,
+        host_controls: HostControls
+    };
+    var data = JSON.stringify(game);
+    console.log(data);
+    $.ajax({
+        type: 'POST',
+        url: url,
+        dataType: "JSON",
+        error: function(response) {
+            alert("Something went wrong")
+
+        },
+        success: function(response)
+        {
+            console.log(response.message); // show response
+            if(response.message === "Game was deleted") {
+                alert("Game deleted")
+
+            }
+            else {
+                alert("Can't find that game.")
+            }
+        }
+    });})
+
+
+
 
 
 

@@ -38,7 +38,7 @@ body {
     z-index:10;
 }
 
-#container {
+#gamecontainer {
     opacity:0;
     position:absolute;
     width:1000px;
@@ -87,7 +87,7 @@ form select {
     font-family: 'Proxima Nova Light', Arial, sans-serif;
 }
 
-form input[type="submit"] {
+[type="button"] {
     width:380px;
     position: absolute;
     padding: 10px 40px;
@@ -99,6 +99,11 @@ form input[type="submit"] {
     background-color: palegreen;
 }
 
+#Join {
+posistion: absolute;
+    top: 27%;
+
+}
 #movements {
     float:left;
     width:384px;

@@ -148,6 +148,9 @@ body{
     width:100%;
     box-shadow: 10px 10px 5px #888888;
     border:1px solid #000000;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
 
     -moz-border-radius-bottomleft:15px;
     -webkit-border-bottom-left-radius:15px;

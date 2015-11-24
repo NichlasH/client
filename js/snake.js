@@ -1,6 +1,8 @@
 /**
  * Created by NH on 11-11-2015.
  */
+
+/* property of snake.pixelfabrikken.net */
 function rgbToHex(r, g, b) {
     if (r > 255 || g > 255 || b > 255)
         throw "Invalid color component";
