@@ -7,7 +7,6 @@ body {
 }
 .background {
     position: fixed;
-    margin:0;
     height: 100%;
     width:100%;
     background:
@@ -29,7 +28,11 @@ body {
     background-blend-mode: screen;
     z-index: 0;}
 
+#gamewrap {
+    margin-left:auto;
+    margin-right:auto;
 
+}
 #overlay {
     display:block;
     height:100%;
@@ -39,20 +42,21 @@ body {
 }
 
 #gamecontainer {
-    opacity:0;
     position:absolute;
-    width:1000px;
-    left:50%;
-    top:50%;
-    height:520px;
-    margin-top:-322px;
-    margin-left:-500px;
+    opacity:0;
+    width:75%;
+    height:75%;
     background-color:aliceblue;
     padding:20px;
-    -webkit-box-shadow: 0px 0px 42px -6px aliceblue;
-    -moz-box-shadow: 0px 0px 42px -6px aliceblue;
-    box-shadow: 0px 0px 42px -6px aliceblue);
     z-index:1;
+    left:0; right:0;
+    top:0; bottom:0;
+    margin:auto;
+    /*this to solve "the content will not be cut when the window is smaller than the content": */
+    max-width:100%;
+    max-height:100%;
+
+
 }
 
 #arena {float:right;}
@@ -101,7 +105,7 @@ form select {
 
 #Join {
 posistion: absolute;
-    top: 27%;
+    top: 26%;
 
 }
 #movements {
@@ -115,7 +119,8 @@ posistion: absolute;
     text-align:center;
     top:20px;
     left:50%;
-    margin-left:-500px;
+    margin-left:auto;
+    margin-right:auto;
     width:1000px;
     font-size:16pt;
 }

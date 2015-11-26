@@ -58,7 +58,7 @@ function drawLeft() {
     ctx.fillRect(cx - tile_size, cy, tile_size, tile_size);
     cx = cx - tile_size;
     numMoves = numMoves + 1;
-    host_movements += "a,";
+    host_movements += "a";
 
     var direction = $("<div class='arrowLeft'></div>").hide();
     $('#movements .arrows').append(direction);
@@ -93,7 +93,7 @@ function drawUp() {
     ctx.fillRect(cx, cy - tile_size, tile_size, tile_size);
     cy = cy - tile_size;
     numMoves += 1;
-    host_movements += "w,";
+    host_movements += "w";
 
     var direction = $("<div class='arrowUp'></div>").hide();
     $('#movements .arrows').append(direction);
@@ -115,7 +115,7 @@ function drawRight() {
     ctx.fillRect(cx + tile_size, cy, tile_size, tile_size);
     cx = cx + tile_size;
     numMoves += 1
-    host_movements += "d,";
+    host_movements += "d";
     var direction = $("<div class='arrowRight'></div>").hide();
     $('#movements .arrows').append(direction);
     direction.fadeIn(200);
@@ -135,7 +135,7 @@ function drawDown() {
     ctx.fillRect(cx, cy + tile_size, tile_size, tile_size);
     cy = cy + tile_size;
     numMoves += 1
-    host_movements += "s,";
+    host_movements += "s";
     //$("#movements .arrows").append("<div class='arrowDown' style='display:none'></div>").fadeIn(200);
 
     var direction = $("<div class='arrowDown'></div>").hide();

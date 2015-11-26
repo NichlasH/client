@@ -5,59 +5,43 @@
     <title>Snail'A'Trail</title>
 
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/scoreoverride.css">
+    <link rel="stylesheet" href="css/deleteoverride.css">
 </head>
 <body>
+<div class="background"></div>
 
-<div class="background">
+<div id="overlay">
     <div id='cssmenu'>
         <ul>
-
             <li><a href='game.html'>Snail'A'Trail <span class="glyphicon glyphicon-leaf"></span>  </a></li>
-            <li class='active'><a href='score.html'><span class="glyphicon glyphicon-king"></span></a></li>
+            <li><a href='score.html'><span class="glyphicon glyphicon-king"></span></a></li>
             <li><a href='delete.html'><span class="glyphicon glyphicon-trash"></span></a></li>
-            <li><a href='join.html'><span class="glyphicon glyphicon-expand"></span></a></li>
-            <li><a href='index.html'><span class="glyphicon glyphicon-off"></span></a></li>
+            <li class='active'><a href='join.html'><span class="glyphicon glyphicon-expand"></span></a></li>
             <li><a href='index.html'><span class="glyphicon glyphicon-off"></span></a></li>
         </ul>
 
-
     </div>
-
-<div class="container">
-
-
-    <!-- Table -->
-    <div class="mytable">
-        <table id="score">
+    <div class="gametable">
+        <table class = "gametbl" id="jointable">
 
 
             <tr>
-                <th width="300px">Posistion</th>
-                <th width="300px">Name</th>
-                <th width="300px">Score</th>
+                <th width="250px">GameName</th>
+                <th width="250px">GameID</th>
+                <th >Join</th>
 
             </tr>
 
 
         </table>
+    </div>
+    <div class="delete">
+
 
     </div>
-
 </div>
-</div>
-
-
-
-
-
-
-
-
-
+</body>
 <script src="js/lib/jquery-2.1.4.min.js"></script>
 <script src="js/lib/bootstrap.js"></script>
 <script src="js/client.js"></script>
-</div>
-</body>
 </html>

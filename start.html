@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Snake</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/gameoverride.css" type="text/css">
+    <script src="js/lib/jquery-2.1.4.min.js"></script>
+    <script src="js/lib/jquery-ui.min.js"></script>
+
+</head>
+<body>
+<div id="gamewrap">
+    <div class="background"></div>
+
+
+    <div id='cssmenu'>
+        <ul>
+            <li class='active'><a href='game.html'>Snail'A'Trail <span class="glyphicon glyphicon-leaf"></span>  </a></li>
+            <li><a href='score.html'><span class="glyphicon glyphicon-king"></span></a></li>
+            <li><a href='delete.html' ><span class="glyphicon glyphicon-trash"></span></a></li>
+            <li><a href='join.html' ><span class="glyphicon glyphicon-expand"></span></a></li>
+            <li><a href='index.html'><span class="glyphicon glyphicon-off"></span></a></li>
+        </ul>
+    </div>
+    <div id="gamecontainer">
+        <div id="arena">
+            <canvas id="grid" width="480" height="480"></canvas><br />
+        </div>
+
+        <div id="form">
+            <form id="idForm" method="POST">
+
+
+                    </optgroup>
+                </select>
+                <input type="hidden" name="frmOpponentControls" id="frmOpponentControls">
+                <input type="button" value="Start Game" id="Start">
+
+
+            </form>
+
+        </div><!--#form-->
+
+
+        <div id="movements">
+            Movements <span></span><br />
+            <div class="arrows"></div>
+        </div><!--#movements-->
+
+    </div><!--#container-->
+</div>
+
+
+
+<script src="js/snake.js"></script>
+<script src="js/client.js"></script>
+</body>
+</html>
