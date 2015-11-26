@@ -27,8 +27,12 @@ $("#loginform").submit(function(e) {
             console.log(response.message); // show response
             if(response.userid) {
                 userid = response.userid;
-                document.cookie= userid;
 
+                var now = new Date();
+                var time = now.getTime();
+                var expireTime = time + 1000*36000;
+                now.setTime(expireTime);
+                document.cookie = userid +';expires='+now.toGMTString()+';path=/';
                 window.location.href = 'game.html';
 
 
@@ -45,36 +49,7 @@ $("#loginform").submit(function(e) {
 });
 
 
-$("#deleteform").submit(function(e) {
 
-    var game = $('#gamefrm').val();
-    var url = "http://localhost:9998/api/games/" + game; // the script where you handle the form input.
-    console.log(url);
-    $.ajax({
-        type: 'POST',
-        url: url,
-        dataType: "JSON",
-        error: function(response) {
-            alert("Something went wrong")
-
-        },
-        success: function(response)
-        {
-            console.log(response.message); // show response
-            if(response.message === "Game was deleted") {
-                alert("Game deleted")
-
-            }
-            else {
-                alert("Can't find that game.")
-            }
-        }
-    });
-
-
-
-    e.preventDefault(); // avoid to execute the actual submit of the form.
-});
 
 
 
@@ -96,33 +71,59 @@ $("#deleteform").submit(function(e) {
 
 var userid = document.cookie;
 
-$.get("http://localhost:9998/api/games/opponent/"+ userid + "/", function( data )  {
+$.get("http://localhost:9998/api/games/host/"+ userid + "/", function( data )  {
 
     for (var i=0;i<data.length;++i)
     {
         $('#deletetable tr:last').after('<tr>' +
-            '<td>' + data[i].name + '</td>' +
+            '<td >' + data[i].name + '</td>' +
             '<td>' + data[i].gameId + '</td>' +
-            '<td><button id="' +data[i].gameId + '" name="deletebtn">DELETE</button></td>' +
+            '<td><button class="btndelete" id="' +data[i].gameId + '" name="deletebtn">Delete</button></td>' +
 
 
 
             '</tr>');
     }
-    console.log(data)
+    $(".btndelete").click(function(e) {
+        var game = this.id;
+        var url = "http://localhost:9998/api/games/" + game; // the script where you handle the form input.
+        console.log(url);
+        $.ajax({
+            type: 'POST',
+            url: url,
+            dataType: "JSON",
+            error: function(response) {
+                alert("Something went wrong")
 
+            },
+            success: function(response)
+            {
+                console.log(response.message); // show response
+                if(response.message === "Game was deleted") {
+                    alert("Game deleted")
+
+                }
+                else {
+                    alert("Can't find that game.")
+                }
+            }
+        });
+    });
 });
 
 
 
-$.get("http://localhost:9998/api/games/host/"+ userid + "/", function( data )  {
+
+
+
+$.get("http://localhost:9998/api/games/opponent/"+ userid + "/", function( data )  {
 
     for (var i=0;i<data.length;++i)
     {
         $('#jointable tr:last').after('<tr>' +
             '<td>' + data[i].name + '</td>' +
             '<td>' + data[i].gameId + '</td>' +
-            '<td><button id="' +data[i].gameId + '" name="joinbtn">Join</button></td>' +
+            '<td><button class= "joinbtn" id=" +data[i].gameId + " name="joinbtn">Join</button></td>' +
 
 
 
@@ -131,6 +132,11 @@ $.get("http://localhost:9998/api/games/host/"+ userid + "/", function( data )  {
     console.log(data)
 
 });
+
+
+
+
+
 $( document ).ready(function()
 {
     $("#gamecontainer").fadeTo("slow",1);
@@ -194,7 +200,11 @@ $("#Create").click(function(e) {
     });})
 
 $("#dlcookie").click(function(e) {
-    document.cookie="2";
+    var now = new Date();
+    var time = now.getTime();
+    var expireTime = 1;
+    now.setTime(expireTime);
+    document.cookie = userid +';expires='+now.toGMTString()+';path=/';
 console.log(document.cookie);
 })
 
