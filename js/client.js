@@ -1,5 +1,19 @@
+function setCookie(key, value) {
+    var expires = new Date();
+    expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
+    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+}
 
+function getCookie(key) {
+    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+    return keyValue ? keyValue[2] : null;
+}
 
+function deleteCookie(key) {
+    var expires = new Date();
+    expires.setTime(1);
+    document.cookie = key + '=' + ';expires=' + expires.toUTCString();
+}
 
 $("#loginform").submit(function(e) {
 
@@ -28,11 +42,7 @@ $("#loginform").submit(function(e) {
             if(response.userid) {
                 userid = response.userid;
 
-                var now = new Date();
-                var time = now.getTime();
-                var expireTime = time + 1000*36000;
-                now.setTime(expireTime);
-                document.cookie = userid +';expires='+now.toGMTString()+';path=/';
+                setCookie('userid', response.userid);
                 window.location.href = 'game.html';
 
 
@@ -69,7 +79,7 @@ $("#loginform").submit(function(e) {
     });
 
 
-var userid = document.cookie;
+var userid = getCookie('userid');
 
 $.get("http://localhost:9998/api/games/host/"+ userid + "/", function( data )  {
 
@@ -123,17 +133,45 @@ $.get("http://localhost:9998/api/games/opponent/"+ userid + "/", function( data 
         $('#jointable tr:last').after('<tr>' +
             '<td>' + data[i].name + '</td>' +
             '<td>' + data[i].gameId + '</td>' +
-            '<td><button class= "joinbtn" id=" +data[i].gameId + " name="joinbtn">Join</button></td>' +
+            '<td><button class= "btnjoin" id="' +data[i].gameId + '" name="joinbtn">Join</button></td>' +
 
 
 
             '</tr>');
     }
-    console.log(data)
+    $(".btnjoin").click(function(e) {
 
-});
+        setCookie('joinId',this.id);
+
+            window.location.href = 'start.html';
 
 
+
+    });})
+
+$("#start").click(function(e) {
+    var GameId = getCookie('joinId');
+    var Host = document.cookie;
+    var OpponentControls = host_movements;
+    var url = "http://localhost:9998/api/games/start"; // the script where you handle the form input.
+    var data = '{"gameId": ' + GameId + ', "opponent": {"controls" : "'+ OpponentControls + '"}}';
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        dataType: "JSON",
+        data: data, // serializes the form's elements.
+        error: function(response) {
+            alert("Something went wrong")
+
+        },
+        success: function(response)
+        {
+            alert("game started")
+            console.log(response.message); // show response
+
+        }
+    });})
 
 
 
@@ -155,19 +193,8 @@ console.log(data)
 
 
 
-function ConvertFormToJSON(form){
-    var array = jQuery("form").serializeArray();
-    var json = {};
-
-    jQuery.each(array, function() {
-        json[this.name] = this.value || '';
-    });
-    console.log(json);
-    return json;
-}
-
 // this is the id of the form
-$("#Create").click(function(e) {
+$("#create").click(function(e) {
 
     var GameName = $('#frmGameName').val();
     var Opponent = $('#frmOpponent').val();
@@ -204,8 +231,7 @@ $("#dlcookie").click(function(e) {
     var time = now.getTime();
     var expireTime = 1;
     now.setTime(expireTime);
-    document.cookie = userid +';expires='+now.toGMTString()+';path=/';
-console.log(document.cookie);
+deleteCookie('userid');
 })
 
 
