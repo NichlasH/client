@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     padding: 0;
     background: #fff;
@@ -9,38 +9,37 @@ body{
 }
 
 body ::-webkit-input-placeholder {
-/ WebKit browsers /
-font-family: 'Source Sans Pro', sans-serif;
+/ WebKit browsers / font-family : 'Source Sans Pro', sans-serif;
     color: #f0f8ff;
     font-weight: 300;
 }
+
 body :-moz-placeholder {
-/ Mozilla Firefox 4 to 18 /
-font-family: 'Source Sans Pro', sans-serif;
+/ Mozilla Firefox 4 to 18 / font-family : 'Source Sans Pro', sans-serif;
     color: #f0f8ff;
     opacity: 1;
     font-weight: 300;
 }
+
 body ::-moz-placeholder {
-/ Mozilla Firefox 19+ /
-font-family: 'Source Sans Pro', sans-serif;
+/ Mozilla Firefox 19 + / font-family : 'Source Sans Pro', sans-serif;
     color: #f0f8ff;
     opacity: 1;
     font-weight: 300;
 }
+
 body :-ms-input-placeholder {
-/ Internet Explorer 10+ /
-font-family: 'Source Sans Pro', sans-serif;
+/ Internet Explorer 10 + / font-family : 'Source Sans Pro', sans-serif;
     color: #f0f8ff;
-    font-weight: 300;}
+    font-weight: 300;
+}
 
 .background {
     position: fixed;
-    margin:0;
+    margin: 0;
     height: 100%;
-    width:100%;
-    background:
-    linear-gradient(
+    width: 100%;
+    background: linear-gradient(
             limegreen,
             transparent
     ),
@@ -56,9 +55,10 @@ font-family: 'Source Sans Pro', sans-serif;
     );
 
     background-blend-mode: screen;
-    z-index: 0;}
+    z-index: 0;
+}
 
-.grad{
+.grad {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -66,20 +66,19 @@ font-family: 'Source Sans Pro', sans-serif;
     bottom: 0px;
     width: auto;
     height: auto;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65)));
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.65)));
     z-index: 1;
     opacity: 1.7;
 }
 
-
-.header{
+.header {
     position: absolute;
     top: calc(50% - 35px);
     left: calc(50% - 300px);
     z-index: 2;
 }
 
-.header div{
+.header div {
     float: left;
     color: #fff;
     font-family: 'Exo', sans-serif;
@@ -87,14 +86,14 @@ font-family: 'Source Sans Pro', sans-serif;
     font-weight: 200;
 }
 
-.header div span{
+.header div span {
     color: aliceblue;
 
 );
 
 }
 
-.login{
+.login {
     position: absolute;
     top: calc(50% - 75px);
     left: calc(50% - 50px);
@@ -104,11 +103,11 @@ font-family: 'Source Sans Pro', sans-serif;
     z-index: 2;
 }
 
-.login input[type=text]{
+.login input[type=text] {
     width: 250px;
     height: 30px;
     background: transparent;
-    border: 2px solid rgba(255,255,255,0.6);
+    border: 2px solid rgba(255, 255, 255, 0.6);
     border-radius: 10px;
     color: #fff;
     font-family: 'Exo', sans-serif;
@@ -117,11 +116,11 @@ font-family: 'Source Sans Pro', sans-serif;
     padding: 4px;
 }
 
-.login input[type=password]{
+.login input[type=password] {
     width: 250px;
     height: 30px;
     background: transparent;
-    border: 2px solid rgba(255,255,255,0.6);
+    border: 2px solid rgba(255, 255, 255, 0.6);
     border-radius: 10px;
     color: #fff;
     font-family: 'Exo', sans-serif;
@@ -131,7 +130,7 @@ font-family: 'Source Sans Pro', sans-serif;
     margin-top: 10px;
 }
 
-.login input[type=submit]{
+.login input[type=submit] {
     width: 250px;
     height: 35px;
     background: #fff;
@@ -147,29 +146,29 @@ font-family: 'Source Sans Pro', sans-serif;
     margin-top: 10px;
 }
 
-.login input[type=submit]:hover{
+.login input[type=submit]:hover {
     opacity: 0.8;
 }
 
-.login input[type=submit]:active{
+.login input[type=submit]:active {
     opacity: 0.6;
 }
 
-.login input[type=text]:focus{
+.login input[type=text]:focus {
     outline: none;
-    border: 1px solid rgba(255,255,255,0.9);
+    border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
-.login input[type=password]:focus{
+.login input[type=password]:focus {
     outline: none;
-    border: 1px solid rgba(255,255,255,0.9);
+    border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
-.login input[type=submit]:focus{
+.login input[type=submit]:focus {
     outline: none;
 }
 
-::-webkit-input-placeholder{
-    color: rgba(255,255,255,0.6);
+::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.6);
 }
 

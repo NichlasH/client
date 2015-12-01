@@ -46,9 +46,7 @@ function drawLeft() {
         $("#notification").text("If it weren't for me, you would've died just now.").fadeTo('slow', 1).fadeTo('slow', 0);
         $("#grid").effect("highlight", 400);
         return false;
-    };
-
-
+    }
     // Looking up the color of the future tile. If taken, error out.
     var currentLeft = ctx.getImageData(cx - tile_size, cy, tile_size, tile_size).data;
     var hexCurrentLeft = "#" + ("000000" + rgbToHex(currentLeft[0], currentLeft[1], currentLeft[2])).slice(-6);
@@ -83,13 +81,13 @@ function drawUp() {
 
         $("#grid").effect("highlight", 400);
         return false;
-    };
+    }
     // Looking up the color of the future tile. If red, error out.
     var p = ctx.getImageData(cx, cy - tile_size, tile_size, tile_size).data;
     var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
     if (hex == "#98fb98") {
         return false;
-    };
+    }
     ctx.fillRect(cx, cy - tile_size, tile_size, tile_size);
     cy = cy - tile_size;
     numMoves += 1;
@@ -105,16 +103,17 @@ function drawRight() {
     if (cx > (canvas_size - tile_size * 2)) {
         $("#notification").text("If it weren't for me, you would've died just now.").fadeTo('slow', 1).fadeTo('slow', 0);
         $("#grid").effect("highlight", 400);
-        return false;};
+        return false;
+    }
     // Looking up the color of the future tile. If red, error out.
     var p = ctx.getImageData(cx + tile_size, cy, tile_size, tile_size).data;
     var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
     if (hex == "#98fb98") {
         return false;
-    };
+    }
     ctx.fillRect(cx + tile_size, cy, tile_size, tile_size);
     cx = cx + tile_size;
-    numMoves += 1
+    numMoves += 1;
     host_movements += "d";
     var direction = $("<div class='arrowRight'></div>").hide();
     $('#movements .arrows').append(direction);
@@ -125,18 +124,19 @@ function drawDown() {
     if (cy > (canvas_size - tile_size * 2)) {
         $("#notification").text("If it weren't for me, you would've died just now.").fadeTo('slow', 1).fadeTo('slow', 0);
         $("#grid").effect("highlight", 400);
-        return false;};
+        return false;
+    }
     var p = ctx.getImageData(cx, cy + tile_size, tile_size, tile_size).data;
     var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
     if (hex == "#98fb98") {
 
         return false;
-    };
+    }
     ctx.fillRect(cx, cy + tile_size, tile_size, tile_size);
     cy = cy + tile_size;
-    numMoves += 1
+    numMoves += 1;
     host_movements += "s";
-    //$("#movements .arrows").append("<div class='arrowDown' style='display:none'></div>").fadeIn(200);
+
 
     var direction = $("<div class='arrowDown'></div>").hide();
     $('#movements .arrows').append(direction);
@@ -145,10 +145,9 @@ function drawDown() {
 
 }
 
-$(document).bind("keydown", function(e){
+$(document).bind("keydown", function (e) {
 
-    switch(e.keyCode)
-    {
+    switch (e.keyCode) {
         //left
         case 37:
             drawLeft();
@@ -170,9 +169,7 @@ $(document).bind("keydown", function(e){
             break;
     }
 
-    //console.log(host_movements);
-    //$("#coords").text("X: " + cx + ", Y: " + cy);
-    $("#movements span").text("("+numMoves+")");
+    $("#movements span").text("(" + numMoves + ")");
 
 
 });

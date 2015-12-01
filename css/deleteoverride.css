@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     padding: 0;
     background: black;
@@ -9,40 +9,37 @@ body{
 }
 
 body ::-webkit-input-placeholder {
-/ WebKit browsers /
-font-family: 'Source Sans Pro', sans-serif;
+/ WebKit browsers / font-family : 'Source Sans Pro', sans-serif;
     color: #f0f8ff;
     font-weight: 300;
 }
+
 body :-moz-placeholder {
-/ Mozilla Firefox 4 to 18 /
-font-family: 'Source Sans Pro', sans-serif;
+/ Mozilla Firefox 4 to 18 / font-family : 'Source Sans Pro', sans-serif;
     color: #f0f8ff;
     opacity: 1;
     font-weight: 300;
 }
+
 body ::-moz-placeholder {
-/ Mozilla Firefox 19+ /
-font-family: 'Source Sans Pro', sans-serif;
+/ Mozilla Firefox 19 + / font-family : 'Source Sans Pro', sans-serif;
     color: #f0f8ff;
     opacity: 1;
     font-weight: 300;
 }
+
 body :-ms-input-placeholder {
-/ Internet Explorer 10+ /
-font-family: 'Source Sans Pro', sans-serif;
+/ Internet Explorer 10 + / font-family : 'Source Sans Pro', sans-serif;
     color: #f0f8ff;
-    font-weight: 300;}
-
-
+    font-weight: 300;
+}
 
 .background {
     position: fixed;
-    margin:0;
+    margin: 0;
     height: 100%;
-    width:100%;
-    background:
-    linear-gradient(
+    width: 100%;
+    background: linear-gradient(
             limegreen,
             transparent
     ),
@@ -58,16 +55,18 @@ font-family: 'Source Sans Pro', sans-serif;
     );
 
     background-blend-mode: screen;
-    z-index: 0;}
+    z-index: 0;
+}
 
 #overlay {
-    display:block;
-    height:100%;
-    width:100%;
-    position:fixed;
-    z-index:10;
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
 }
-.delete{
+
+.delete {
     position: absolute;
     top: calc(50% - 75px);
     left: calc(50% - 50px);
@@ -77,11 +76,11 @@ font-family: 'Source Sans Pro', sans-serif;
     z-index: 2;
 }
 
-.delete input[type=text]{
+.delete input[type=text] {
     width: 250px;
     height: 30px;
     background: transparent;
-    border: 2px solid rgba(255,255,255,0.6);
+    border: 2px solid rgba(255, 255, 255, 0.6);
     border-radius: 10px;
     color: #fff;
     font-family: 'Exo', sans-serif;
@@ -90,8 +89,7 @@ font-family: 'Source Sans Pro', sans-serif;
     padding: 4px;
 }
 
-
-.delete input[type=submit]{
+.delete input[type=submit] {
     width: 250px;
     height: 35px;
     background: #fff;
@@ -107,29 +105,27 @@ font-family: 'Source Sans Pro', sans-serif;
     margin-top: 10px;
 }
 
-.delete input[type=submit]:hover{
+.delete input[type=submit]:hover {
     opacity: 0.8;
 }
 
-.delete input[type=submit]:active{
+.delete input[type=submit]:active {
     opacity: 0.6;
 }
 
-.delete input[type=text]:focus{
+.delete input[type=text]:focus {
     outline: none;
-    border: 1px solid rgba(255,255,255,0.9);
+    border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
-.delete input[type=password]:focus{
+.delete input[type=password]:focus {
     outline: none;
-    border: 1px solid rgba(255,255,255,0.9);
+    border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
-
-::-webkit-input-placeholder{
-    color: rgba(255,255,255,0.6);
+::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.6);
 }
-
 
 /* Nav bar */
 @import url(http://fonts.googleapis.com/css?family=Raleway);
@@ -148,6 +144,7 @@ font-family: 'Source Sans Pro', sans-serif;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
 #cssmenu:after,
 #cssmenu > ul:after {
     content: ".";
@@ -157,38 +154,47 @@ font-family: 'Source Sans Pro', sans-serif;
     line-height: 0;
     height: 0;
 }
+
 #cssmenu {
     width: auto;
     border-bottom: 3px solid #98fb98;
     font-family: Raleway, sans-serif;
-    line-height: 1;}
+    line-height: 1;
+}
+
 #cssmenu ul {
 
     background: -webkit-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* Chrome 10+, Saf5.1+ */
-    background:    -moz-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* FF3.6+ */
-    background:     -ms-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* IE10 */
-    background:      -o-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* Opera 11.10+ */
-    background:         linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* W3C */
+    background: -moz-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* FF3.6+ */
+    background: -ms-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* IE10 */
+    background: -o-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* Opera 11.10+ */
+    background: linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* W3C */
 
 }
+
 #cssmenu > ul > li {
     float: left;
 }
+
 #cssmenu.align-center > ul {
     font-size: 0;
     text-align: center;
 }
+
 #cssmenu.align-center > ul > li {
     display: inline-block;
     float: none;
 }
+
 #cssmenu.align-right > ul > li {
     float: right;
 }
+
 #cssmenu.align-right > ul > li > a {
     margin-right: 0;
     margin-left: -4px;
 }
+
 #cssmenu > ul > li > a {
     z-index: 2;
     padding: 18px 25px 12px 25px;
@@ -203,11 +209,13 @@ font-family: 'Source Sans Pro', sans-serif;
     transition: all .2s ease;
     margin-right: -4px;
 }
+
 #cssmenu > ul > li.active > a,
 #cssmenu > ul > li:hover > a,
 #cssmenu > ul > li > a:hover {
     color: #ffffff;
 }
+
 #cssmenu > ul > li > a:after {
     position: absolute;
     left: 0;
@@ -229,13 +237,12 @@ font-family: 'Source Sans Pro', sans-serif;
     transform: perspective(5px) rotateX(2deg);
     transform-origin: bottom;
 }
+
 #cssmenu > ul > li.active > a:after,
 #cssmenu > ul > li:hover > a:after,
 #cssmenu > ul > li > a:hover:after {
 
-
     background: #98fb98;
-
 
 }
 
@@ -247,12 +254,11 @@ table {
     width: 80%;
     posistion: fixed;
 
-
 }
 
 .gametable {
     margin-top: 1%;
-   font-weight: bold;
+    font-weight: bold;
     font-size: 15px;
     display: flex;
     justify-content: center;
@@ -263,19 +269,17 @@ table {
     border-bottom: 1px solid #f2f2f2;
 }
 
-
-
 .gametbl th {
     text-align: left;
-    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
     border-bottom: 1px solid #ccc;
     background-color: #eee;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#eee));
     background-image: -webkit-linear-gradient(top, #f5f5f5, #eee);
-    background-image:    -moz-linear-gradient(top, #f5f5f5, #eee);
-    background-image:     -ms-linear-gradient(top, #f5f5f5, #eee);
-    background-image:      -o-linear-gradient(top, #f5f5f5, #eee);
-    background-image:         linear-gradient(top, #f5f5f5, #eee);
+    background-image: -moz-linear-gradient(top, #f5f5f5, #eee);
+    background-image: -ms-linear-gradient(top, #f5f5f5, #eee);
+    background-image: -o-linear-gradient(top, #f5f5f5, #eee);
+    background-image: linear-gradient(top, #f5f5f5, #eee);
 }
 
 

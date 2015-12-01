@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     padding: 0;
     background: black;
@@ -10,11 +10,10 @@ body{
 
 .background {
     position: fixed;
-    margin:0;
+    margin: 0;
     height: 100%;
-    width:100%;
-    background:
-    linear-gradient(
+    width: 100%;
+    background: linear-gradient(
             limegreen,
             transparent
     ),
@@ -30,8 +29,8 @@ body{
     );
 
     background-blend-mode: screen;
-    z-index: 0;}
-
+    z-index: 0;
+}
 
 /* Nav bar */
 
@@ -50,6 +49,7 @@ body{
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
 #cssmenu:after,
 #cssmenu > ul:after {
     content: ".";
@@ -59,39 +59,48 @@ body{
     line-height: 0;
     height: 0;
 }
+
 #cssmenu {
     width: auto;
     border-bottom: 5px solid #98fb98;
     font-family: Raleway, sans-serif;
-    line-height: 1;}
+    line-height: 1;
+}
+
 #cssmenu ul {
 
     background: -webkit-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* Chrome 10+, Saf5.1+ */
-    background:    -moz-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* FF3.6+ */
-    background:     -ms-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* IE10 */
-    background:      -o-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* Opera 11.10+ */
-    background:         linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* W3C */
+    background: -moz-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* FF3.6+ */
+    background: -ms-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* IE10 */
+    background: -o-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* Opera 11.10+ */
+    background: linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* W3C */
 
 }
+
 #cssmenu > ul > li {
     float: left;
 }
+
 #cssmenu.align-center > ul {
     font-size: 0;
     text-align: center;
 }
+
 #cssmenu.align-center > ul > li {
     display: inline-block;
     float: none;
 }
+
 #cssmenu.align-right > ul > li {
     float: right;
     text-align: right;
 }
+
 #cssmenu.align-right > ul > li > a {
     margin-right: 0;
     margin-left: -4px;
 }
+
 #cssmenu > ul > li > a {
     z-index: 2;
     padding: 18px 25px 12px 25px;
@@ -106,11 +115,13 @@ body{
     transition: all .2s ease;
     margin-right: -4px;
 }
+
 #cssmenu > ul > li.active > a,
 #cssmenu > ul > li:hover > a,
 #cssmenu > ul > li > a:hover {
     color: #ffffff;
 }
+
 #cssmenu > ul > li > a:after {
     position: absolute;
     left: 0;
@@ -132,87 +143,104 @@ body{
     transform: perspective(5px) rotateX(2deg);
     transform-origin: bottom;
 }
+
 #cssmenu > ul > li.active > a:after,
 #cssmenu > ul > li:hover > a:after,
 #cssmenu > ul > li > a:hover:after {
 
-
     background: #98fb98;
 
-
 }
- /* table */
+
+/* table */
 
 .mytable {
-    margin:0px;padding:0px;
-    width:100%;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
     box-shadow: 10px 10px 5px #888888;
-    border:1px solid #000000;
+    border: 1px solid #000000;
     margin-top: 5px;
     display: flex;
     justify-content: center;
 
-    -moz-border-radius-bottomleft:15px;
-    -webkit-border-bottom-left-radius:15px;
-    border-bottom-left-radius:15px;
+    -moz-border-radius-bottomleft: 15px;
+    -webkit-border-bottom-left-radius: 15px;
+    border-bottom-left-radius: 15px;
 
-    -moz-border-radius-bottomright:15px;
-    -webkit-border-bottom-right-radius:15px;
-    border-bottom-right-radius:15px;
+    -moz-border-radius-bottomright: 15px;
+    -webkit-border-bottom-right-radius: 15px;
+    border-bottom-right-radius: 15px;
 
-    -moz-border-radius-topright:15px;
-    -webkit-border-top-right-radius:15px;
-    border-top-right-radius:15px;
+    -moz-border-radius-topright: 15px;
+    -webkit-border-top-right-radius: 15px;
+    border-top-right-radius: 15px;
 
-    -moz-border-radius-topleft:15px;
-    -webkit-border-top-left-radius:15px;
-    border-top-left-radius:15px;
-}.mytable table{
-     border-collapse: collapse;
-     border-spacing: 0;
-     width:100%;
-     height:100%;
-     margin:0px;padding:0px;
- }.mytable tr:last-child td:last-child {
-      -moz-border-radius-bottomright:15px;
-      -webkit-border-bottom-right-radius:15px;
-      border-bottom-right-radius:15px;
-  }
-.mytable table tr:first-child td:first-child {
-    -moz-border-radius-topleft:15px;
-    -webkit-border-top-left-radius:15px;
-    border-top-left-radius:15px;
+    -moz-border-radius-topleft: 15px;
+    -webkit-border-top-left-radius: 15px;
+    border-top-left-radius: 15px;
 }
+
+.mytable table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.mytable tr:last-child td:last-child {
+    -moz-border-radius-bottomright: 15px;
+    -webkit-border-bottom-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.mytable table tr:first-child td:first-child {
+    -moz-border-radius-topleft: 15px;
+    -webkit-border-top-left-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
 .mytable table tr:first-child td:last-child {
-    -moz-border-radius-topright:15px;
-    -webkit-border-top-right-radius:15px;
-    border-top-right-radius:15px;
-}.mytable tr:last-child td:first-child{
-     -moz-border-radius-bottomleft:15px;
-     -webkit-border-bottom-left-radius:15px;
-     border-bottom-left-radius:15px;
- }.mytable tr:hover td{
-      background-color:#f0f8ff;
+    -moz-border-radius-topright: 15px;
+    -webkit-border-top-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
 
+.mytable tr:last-child td:first-child {
+    -moz-border-radius-bottomleft: 15px;
+    -webkit-border-bottom-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
 
-  }
-.mytable td{
-    vertical-align:middle;
+.mytable tr:hover td {
+    background-color: #f0f8ff;
 
+}
 
-    border:1px solid #000000;
-    border-width:0px 1px 1px 0px;
-    text-align:left;
-    padding:17px;
-    font-size:17px;
-    font-family:Helvetica;
-    font-weight:bold;
+.mytable td {
+    vertical-align: middle;
 
-}.mytable tr:last-child td{
-     border-width:0px 1px 0px 0px;
- }.mytable tr td:last-child{
-      border-width:0px 0px 1px 0px;
-  }.mytable tr:last-child td:last-child{
-       border-width:0px 0px 0px 0px;
-   }
+    border: 1px solid #000000;
+    border-width: 0px 1px 1px 0px;
+    text-align: left;
+    padding: 17px;
+    font-size: 17px;
+    font-family: Helvetica;
+    font-weight: bold;
+
+}
+
+.mytable tr:last-child td {
+    border-width: 0px 1px 0px 0px;
+}
+
+.mytable tr td:last-child {
+    border-width: 0px 0px 1px 0px;
+}
+
+.mytable tr:last-child td:last-child {
+    border-width: 0px 0px 0px 0px;
+}
 

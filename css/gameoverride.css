@@ -1,16 +1,15 @@
 
-
 body {
     font-family: 'Proxima Nova Light', Arial, sans-serif;
-    font-size:10pt;
+    font-size: 10pt;
 
 }
+
 .background {
     position: fixed;
     height: 100%;
-    width:100%;
-    background:
-    linear-gradient(
+    width: 100%;
+    background: linear-gradient(
             limegreen,
             transparent
     ),
@@ -26,80 +25,91 @@ body {
     );
 
     background-blend-mode: screen;
-    z-index: 0;}
+    z-index: 0;
+}
 
 #gamewrap {
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
 
 }
+
 #overlay {
-    display:block;
-    height:100%;
-    width:100%;
-    position:fixed;
-    z-index:10;
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
 }
 
 #gamecontainer {
-    position:absolute;
-    opacity:0;
-    width:75%;
-    height:75%;
-    background-color:aliceblue;
-    padding:20px;
-    z-index:1;
-    left:0; right:0;
-    top:0; bottom:0;
-    margin:auto;
-    /*this to solve "the content will not be cut when the window is smaller than the content": */
-    max-width:100%;
-    max-height:100%;
+    position: absolute;
 
+    width: 75%;
+    height: 75%;
+    background-color: aliceblue;
+    padding: 20px;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    /*this to solve "the content will not be cut when the window is smaller than the content": */
+    max-width: 100%;
+    max-height: 100%;
 
 }
 
-#arena {float:right;}
+#arena {
+    float: right;
+}
 
 #grid {
-    border-right:1px solid #E0E0E0;
-    border-bottom:1px solid #E0E0E0;
+    border-right: 1px solid #E0E0E0;
+    border-bottom: 1px solid #E0E0E0;
 }
 
-#form {float:left;}
-#form form {}
+#form {
+    float: left;
+}
+
+#form form {
+}
+
 #form form label {
-    display:block;
-    width:374px;
-    padding:8px 0 6px 0;
+    display: block;
+    width: 374px;
+    padding: 8px 0 6px 0;
 }
 
 form input {
     font-family: 'Proxima Nova Light', Arial, sans-serif;
-    padding:7px 10px;
+    padding: 7px 10px;
     border: 1px black;
-    font-size:16pt;
-    margin:5px 0 10px 0;
-    width:360px;
+    font-size: 16pt;
+    margin: 5px 0 10px 0;
+    width: 360px;
     border-radius: 6px;
 }
 
 form select {
     -webkit-appearance: menulist-button;
-    font-size: 14px;width:382px; height:40px;
-    margin:5px 0 10px 0;
+    font-size: 14px;
+    width: 382px;
+    height: 40px;
+    margin: 5px 0 10px 0;
     font-family: 'Proxima Nova Light', Arial, sans-serif;
 }
 
-#start{
-posistion: absolute;
-    top:35%;
-colour: red;
+#start {
+    posistion: absolute;
+    top: 35%;
+    colour: red;
 }
 
-
 [type="button"] {
-    width:380px;
+    width: 380px;
     position: absolute;
     padding: 10px 40px;
     margin: 242px 50px 0 0;
@@ -111,44 +121,62 @@ colour: red;
 }
 
 #Join {
-posistion: absolute;
+    posistion: absolute;
     top: 26%;
 
 }
-#movements {
-    float:left;
-    width:384px;
-    margin:20px 0 0 0;
-    }
 
-#notification {
-    position:absolute;
-    text-align:center;
-    top:20px;
-    left:50%;
-    margin-left:auto;
-    margin-right:auto;
-    width:1000px;
-    font-size:16pt;
+#movements {
+    float: left;
+    width: 384px;
+    margin: 20px 0 0 0;
 }
 
-.arrows {margin:0 0 0 4px;}
+#notification {
+    position: absolute;
+    text-align: center;
+    top: 20px;
+    left: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    font-size: 16pt;
+}
+
+.arrows {
+    margin: 0 0 0 4px;
+}
+
 .arrowUp, .arrowRight, .arrowDown, .arrowLeft {
-    float:left;
-    width:7px;
-    height:7px;
+    float: left;
+    width: 7px;
+    height: 7px;
     border-right-width: 5px;
     border-bottom-width: 5px;
     border-style: solid;
-    margin:12px 8px 0 0;
+    margin: 12px 8px 0 0;
 
 }
 
-.arrowUp {border-color: #FFBF00;transform: rotate(-135deg);}
-.arrowRight {border-color: #E83F6F;transform: rotate(-45deg);}
-.arrowDown {border-color: #2274A5;transform: rotate(45deg);}
-.arrowLeft {border-color: #32936F;transform: rotate(135deg);}
+.arrowUp {
+    border-color: #FFBF00;
+    transform: rotate(-135deg);
+}
 
+.arrowRight {
+    border-color: #E83F6F;
+    transform: rotate(-45deg);
+}
+
+.arrowDown {
+    border-color: #2274A5;
+    transform: rotate(45deg);
+}
+
+.arrowLeft {
+    border-color: #32936F;
+    transform: rotate(135deg);
+}
 
 /* Nav bar */
 @import url(http://fonts.googleapis.com/css?family=Raleway);
@@ -167,6 +195,7 @@ posistion: absolute;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
 #cssmenu:after,
 #cssmenu > ul:after {
     content: ".";
@@ -176,38 +205,47 @@ posistion: absolute;
     line-height: 0;
     height: 0;
 }
+
 #cssmenu {
     width: auto;
     border-bottom: 3px solid #98fb98;
     font-family: Raleway, sans-serif;
-    line-height: 1;}
+    line-height: 1;
+}
+
 #cssmenu ul {
 
     background: -webkit-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* Chrome 10+, Saf5.1+ */
-    background:    -moz-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* FF3.6+ */
-    background:     -ms-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* IE10 */
-    background:      -o-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* Opera 11.10+ */
-    background:         linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* W3C */
+    background: -moz-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* FF3.6+ */
+    background: -ms-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* IE10 */
+    background: -o-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* Opera 11.10+ */
+    background: linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* W3C */
 
 }
+
 #cssmenu > ul > li {
     float: left;
 }
+
 #cssmenu.align-center > ul {
     font-size: 0;
     text-align: center;
 }
+
 #cssmenu.align-center > ul > li {
     display: inline-block;
     float: none;
 }
+
 #cssmenu.align-right > ul > li {
     float: right;
 }
+
 #cssmenu.align-right > ul > li > a {
     margin-right: 0;
     margin-left: -4px;
 }
+
 #cssmenu > ul > li > a {
     z-index: 2;
     padding: 18px 25px 12px 25px;
@@ -222,11 +260,13 @@ posistion: absolute;
     transition: all .2s ease;
     margin-right: -4px;
 }
+
 #cssmenu > ul > li.active > a,
 #cssmenu > ul > li:hover > a,
 #cssmenu > ul > li > a:hover {
     color: #ffffff;
 }
+
 #cssmenu > ul > li > a:after {
     position: absolute;
     left: 0;
@@ -248,12 +288,11 @@ posistion: absolute;
     transform: perspective(5px) rotateX(2deg);
     transform-origin: bottom;
 }
+
 #cssmenu > ul > li.active > a:after,
 #cssmenu > ul > li:hover > a:after,
 #cssmenu > ul > li > a:hover:after {
 
-
-background: #98fb98;
-
+    background: #98fb98;
 
 }
