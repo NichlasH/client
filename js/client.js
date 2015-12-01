@@ -34,6 +34,7 @@ $("#loginform").submit(function(e) {
         data: data, // serializes the form's elements.
         error: function(response) {
             alert("Something went wrong")
+            
 
         },
         success: function(response)
@@ -70,7 +71,7 @@ $.get("http://localhost:9998/api/scores",   function( data )  {
     {
         $('#score tr:last').after('<tr>' +
             '<td>' + (i+1) + '</td>' +
-            '<td>' + data[i].user.firstName +" "+ data[i].user.lastName + '</td>' +
+            '<td>' + data[i].user.firstName +" "+ data[i].user.lastName + " ("+ data[i].user.username +")"+ '</td>' +
             '<td>' + data[i].score + '</td>' +
 
             '</tr>');
@@ -208,7 +209,7 @@ $("#create").click(function(e) {
         opponent: {id: Opponent},
         host: {id: Host, controls: HostControls}
     }
-    var data= JSON.stringify(game); 
+    var data= JSON.stringify(game);
     console.log(data);
     $.ajax({
         type: "POST",
