@@ -148,7 +148,6 @@ $("#start").click(function (e) {
     var OpponentControls = host_movements;
     var url = "http://localhost:9998/api/games/start"; // the script where you handle the form input.
     var data = '{"gameId": ' + GameId + ', "opponent": {"controls" : "' + OpponentControls + '"}}';
-
     $.ajax({
         type: "POST",
         url: url,
@@ -164,6 +163,7 @@ $("#start").click(function (e) {
 
         }
     });
+
 });
 
 //Loops trough the games array, and for each found user who doesn't share Id with the current user it adds the data to the option in game.html
