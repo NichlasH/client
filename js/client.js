@@ -103,8 +103,9 @@ $.get("http://localhost:9998/api/games/host/" + getCookie('userid') + "/", funct
             success: function (response) {
                 //If the response from the serverAPI is "Game was deleted" an alert tells the user about the succes. Somewhat a workaround and a bad way of doing it since a change in the server response will stop it from working.
                 if (response.message === "Game was deleted") {
-                    alert("Game deleted")
-
+                    alert("Game deleted");
+                    location.reload();
+                    d
                 }
                 else {
                     alert("Can't find that game.")
@@ -158,8 +159,8 @@ $("#start").click(function (e) {
 
         },
         success: function (response) {
-            alert("game started")
-
+            alert("game started");
+            window.location.href = 'join.html';
 
         }
     });
@@ -169,7 +170,7 @@ $("#start").click(function (e) {
 //Loops trough the games array, and for each found user who doesn't share Id with the current user it adds the data to the option in game.html
 $.get("http://localhost:9998/api/users/", function (data) {
     for (var i = 0; i < data.length; ++i) {
-        if (getCookie('userid') != data[i].id) {
+        if (getCookie('userid') != data[i].id && data[i].type == 1) {
             $('#frmOpponent')
                 .append($('<option>', {value: data[i].id})
                     .text(data[i].firstName + " " + data[i].lastName + " (" + data[i].username + ")"));
@@ -204,8 +205,8 @@ $("#create").click(function (e) {
 
         },
         success: function (response) {
-            alert("game created")
-
+            alert("game created");
+            location.reload();
 
         }
     });
